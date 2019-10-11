@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -104,30 +104,25 @@
   <section class="page-section bg-primary" id="about">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-lg-12 text-center">
-          <!-- <h2 class="text-white mt-0">Lo último en On B!</h2>
-          <hr class="divider light my-4">
-          <p class="text-white-50 mb-4">Esta es una promoción!</p>
-          <img src="img/logo.png" alt="">
-          <br> -->
+        <div class="col-lg-12 text-center">          
           <div class="row">
             <div class="col-md-4">
-              <h2 class="text-white mt-0">Lo último en On B!</h2>
+              <h2 class="text-white mt-0">Ofertas de móviles!</h2>
               <hr class="divider light my-4">
-              <p class="text-white-50 mb-4">Esta es una promoción!</p>
-              <a href="" data-toggle="modal" data-target="#myModal"><img src="img/logo.png" alt=""></a>
+              <p class="text-white-50 mb-4">Los mejores móviles del mercado!</p>
+              <a href="" data-toggle="modal" data-target="#modal_telf"><img src="img/promo/telf.jpg" alt="" style="width:200px"></a>
             </div>
             <div class="col-md-4">
-              <h2 class="text-white mt-0">Lo último en On B!</h2>
+              <h2 class="text-white mt-0">Ofertas de laptops!</h2>
               <hr class="divider light my-4">
-              <p class="text-white-50 mb-4">Esta es una promoción!</p>
-              <a href="" data-toggle="modal" data-target="#myModal"><img src="img/logo.png" alt=""></a>
+              <p class="text-white-50 mb-4">Las mejores laptops para trabajar!</p>
+              <a href="" data-toggle="modal" data-target="#modal_laptop"><img src="img/promo/laptop.jpg" alt="" style="width:200px"></a>
             </div>
             <div class="col-md-4">
-              <h2 class="text-white mt-0">Lo último en On B!</h2>
+              <h2 class="text-white mt-0">Ofertas de monitores!</h2>
               <hr class="divider light my-4">
-              <p class="text-white-50 mb-4">Esta es una promoción!</p>
-              <a href="" data-toggle="modal" data-target="#myModal"><img src="img/logo.png" alt=""></a>
+              <p class="text-white-50 mb-4">Monitor de PC de escritorio 19"!</p>
+              <a href="" data-toggle="modal" data-target="#modal_monitor"><img src="img/promo/monitor.jpg" alt="" style="width:200px"></a>
             </div>
           </div>
           <br>
@@ -275,25 +270,77 @@
   <!-- Footer -->
   <footer class="bg-light py-5">
     <div class="container">
-      <div class="small text-center text-muted">Copyright &copy; 2019 - Taller de Reparaciones On B.    <i class="icon ion-ios-location"></i> Calle B entre 27 y 29.</div>
+      <div class="small text-center text-muted">Copyright &copy; 2019 - Taller de Reparaciones On B.    <i class="icon ion-ios-location"></i> Calle B #666 entre 27 y 29.</div>
     </div>
   </footer>
 
-  <!-- The Modal -->
-<div class="modal" id="myModal">
+  <!-- Telefonos -->
+<div class="modal" id="modal_telf">
   <div class="modal-dialog">
     <div class="modal-content">
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Promoción</h4>
+        <h4 class="modal-title">Ofertas de móviles</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 
       <!-- Modal body -->
       <div class="modal-body">
-        <img src="img/logo.png" alt="">
-        <p>Esto es un ejemplo de promoción</p>
+        <img src="img/promo/telf.jpg" alt="" style="max-width: 450px; width:100%">
+        <p>Ofertamos móviles Samsung y Xiaomi en diferentes tipos. Todos los móviles tienen garantía de 1 mes por escrito.</p>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Laptop -->
+<div class="modal" id="modal_laptop">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Ofertas de laptops</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <img src="img/promo/laptop.jpg" alt="" style="max-width: 450px; width:100%">
+        <p>ASUS A6 AMD, tarjeta de video integrada y memoria RAM 4 GB, 500GB HDD.</p>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Monitor -->
+<div class="modal" id="modal_monitor">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Ofertas de monitor</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <img src="img/promo/monitor.jpg" alt="" style="max-width: 450px; width:100%">
+        <p>Monitor AOC 19" LED.</p>
       </div>
 
       <!-- Modal footer -->
