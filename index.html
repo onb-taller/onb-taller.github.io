@@ -2,6 +2,16 @@
 <html lang="en">
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150380671-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-150380671-1');
+</script>
+
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,6 +31,11 @@
 
   <!-- Theme CSS - Includes Bootstrap -->
   <link href="css/creative.min.css" rel="stylesheet">
+
+  <!-- Plantilla y datos mustache.js -->
+  <script src="js/datos.js"></script>
+  <script src="js/plantilla"></script>
+  <script src="js/plantilla_modal"></script>
 
   <style>
     .gris{
@@ -105,25 +120,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-12 text-center">          
-          <div class="row">
-            <div class="col-md-4">
-              <h2 class="text-white mt-0">Ofertas de móviles!</h2>
-              <hr class="divider light my-4">
-              <p class="text-white-50 mb-4">Los mejores móviles del mercado!</p>
-              <a href="" data-toggle="modal" data-target="#modal_telf"><img src="img/promo/telf.jpg" alt="" style="width:200px"></a>
-            </div>
-            <div class="col-md-4">
-              <h2 class="text-white mt-0">Ofertas de laptops!</h2>
-              <hr class="divider light my-4">
-              <p class="text-white-50 mb-4">Las mejores laptops para trabajar!</p>
-              <a href="" data-toggle="modal" data-target="#modal_laptop"><img src="img/promo/laptop.jpg" alt="" style="width:200px"></a>
-            </div>
-            <div class="col-md-4">
-              <h2 class="text-white mt-0">Ofertas de monitores!</h2>
-              <hr class="divider light my-4">
-              <p class="text-white-50 mb-4">Monitor de PC de escritorio 19"!</p>
-              <a href="" data-toggle="modal" data-target="#modal_monitor"><img src="img/promo/monitor.jpg" alt="" style="width:200px"></a>
-            </div>
+          <div class="row" id="Contenedor">
           </div>
           <br>
           <hr class="divider light my-4">
@@ -244,6 +241,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
+            
           <h2 class="mt-0">Póngase en contacto con nosotros!</h2>
           <hr class="divider my-4">
           <p class="text-muted mb-5">¿Le pasa algo a su PC o laptop? !No hay problema! Llámanos o envíanos un correo y le responderemos tan rápido como sea posible!</p>
@@ -274,83 +272,7 @@
     </div>
   </footer>
 
-  <!-- Telefonos -->
-<div class="modal" id="modal_telf">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Ofertas de móviles</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-        <img src="img/promo/telf.jpg" alt="" style="max-width: 450px; width:100%">
-        <p>Ofertamos móviles Samsung y Xiaomi en diferentes tipos. Todos los móviles tienen garantía de 1 mes por escrito.</p>
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- Laptop -->
-<div class="modal" id="modal_laptop">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Ofertas de laptops</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-        <img src="img/promo/laptop.jpg" alt="" style="max-width: 450px; width:100%">
-        <p>ASUS A6 AMD, tarjeta de video integrada y memoria RAM 4 GB, 500GB HDD.</p>
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- Monitor -->
-<div class="modal" id="modal_monitor">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Ofertas de monitor</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-        <img src="img/promo/monitor.jpg" alt="" style="max-width: 450px; width:100%">
-        <p>Monitor AOC 19" LED.</p>
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-      </div>
-
-    </div>
-  </div>
-</div>
+ <div id="Contenedor_Modales"></div>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -362,6 +284,30 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/creative.min.js"></script>
+  <script src="js/mustache.min.js"></script>
+  <div id="plantillas" style="display:none;"></div>
+  <div id="plantillas2" style="display:none;"></div>
+  <script>
+    $(document ).ready(function() {
+        cargarDatos();
+        cargarDatosModales();
+    });
+    function cargarDatos(){
+        $('#plantillas').load("js/plantilla", function(){
+            var plantilla = $('#plantilla1').html();
+            var datos = Mustache.render(plantilla, data);
+            $('#Contenedor').html(datos);
+        });
+      }
+        function cargarDatosModales(){
+        $('#plantillas2').load("js/plantilla_modal", function(){
+            var plantillamod = $('#plantilla2').html();
+            var datos = Mustache.render(plantillamod, data);
+            $('#Contenedor_Modales').html(datos);
+        });
+    }
+</script>
+
 
 </body>
 
