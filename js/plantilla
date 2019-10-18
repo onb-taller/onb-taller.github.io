@@ -1,0 +1,10 @@
+<div id="plantilla1">
+    {{#promos}}
+    <div class="col-md-4">
+              <h2 class="text-white mt-0">{{texto_titulo}}</h2>
+              <hr class="divider light my-4">
+              <p class="text-white-50 mb-4">{{texto_subtitulo}}</p>
+              <a href="" data-toggle="modal" data-target="#modal_{{modal}}"><img src="img/promo/{{imagen}}" alt="" style="width:200px"></a>
+            </div>
+        {{/promos}}
+</div> 
